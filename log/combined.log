@@ -1,3 +1,10 @@
 {"level":"info","message":"Hello from Acquisitions !","service":"acquisitions-api","timestamp":"2025-12-20T14:46:45.356Z"}
 {"level":"info","message":"::1 - - [20/Dec/2025:14:46:45 +0000] \"GET / HTTP/1.1\" 200 25 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2025-12-20T14:46:45.385Z"}
 {"level":"info","message":"::1 - - [20/Dec/2025:14:46:47 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2025-12-20T14:46:47.767Z"}
+{"level":"info","message":"Hello from Acquisitions !","service":"acquisitions-api","timestamp":"2026-01-02T14:46:37.087Z"}
+{"level":"info","message":"::1 - - [02/Jan/2026:14:46:37 +0000] \"GET / HTTP/1.1\" 200 25 \"-\" \"PostmanRuntime/7.45.0\"","service":"acquisitions-api","timestamp":"2026-01-02T14:46:37.112Z"}
+{"level":"info","message":"::1 - - [02/Jan/2026:14:46:42 +0000] \"GET /api HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.45.0\"","service":"acquisitions-api","timestamp":"2026-01-02T14:46:42.792Z"}
+{"level":"info","message":"::1 - - [02/Jan/2026:14:46:46 +0000] \"GET /api/auth HTTP/1.1\" 404 147 \"-\" \"PostmanRuntime/7.45.0\"","service":"acquisitions-api","timestamp":"2026-01-02T14:46:46.891Z"}
+{"level":"info","message":"::1 - - [02/Jan/2026:14:46:56 +0000] \"GET /api/auth/sign-in HTTP/1.1\" 404 155 \"-\" \"PostmanRuntime/7.45.0\"","service":"acquisitions-api","timestamp":"2026-01-02T14:46:56.095Z"}
+{"level":"info","message":"::1 - - [02/Jan/2026:14:47:46 +0000] \"GET /api HTTP/1.1\" 200 14 \"-\" \"PostmanRuntime/7.45.0\"","service":"acquisitions-api","timestamp":"2026-01-02T14:47:46.977Z"}
+{"level":"info","message":"::1 - - [02/Jan/2026:14:48:04 +0000] \"GET /health HTTP/1.1\" 200 74 \"-\" \"PostmanRuntime/7.45.0\"","service":"acquisitions-api","timestamp":"2026-01-02T14:48:04.463Z"}
