@@ -13,6 +13,15 @@ export const HashPassword = async password => {
   }
 };
 
+export const comparePassword = async (password, hashedPassword) => {
+  try {
+    return await bcrypt.compare(password, hashedPassword);
+  } catch (err) {
+    logger.error('Error comparing password:', err);
+    throw new Error('Password comparison failed');
+  }
+};
+
 export const CreateUser = async ({ name, email, password, role }) => {
   try {
     const existingUser = await db
@@ -48,5 +57,40 @@ export const CreateUser = async ({ name, email, password, role }) => {
   } catch (err) {
     logger.error('Error creating user:', err);
     throw new Error('User creation failed');
+  }
+};
+
+export const authenticateUser = async ({ email, password }) => {
+  try {
+    const [user] = await db.select().from(users).where(eq(users.email, email));
+
+    if (!user) {
+      logger.warn(`Authentication failed for email: ${email} - user not found`);
+      throw new Error('Invalid credentials');
+    }
+
+    const isMatch = await comparePassword(password, user.password);
+
+    if (!isMatch) {
+      logger.warn(
+        `Authentication failed for email: ${email} - invalid password`
+      );
+      throw new Error('Invalid credentials');
+    }
+
+    const safeUser = { ...user };
+    delete safeUser.password;
+
+    logger.info(`User authenticated with email: ${email}`);
+
+    return safeUser;
+  } catch (err) {
+    if (err.message === 'Invalid credentials') {
+      // Known auth failure, rethrow for controller to handle with 401
+      throw err;
+    }
+
+    logger.error('Error authenticating user:', err);
+    throw new Error('User authentication failed');
   }
 };
