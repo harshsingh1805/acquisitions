@@ -17,7 +17,11 @@ app.use(
 app.use(cookieParser());
 
 app.get('/health', (req, res) => {
-  res.status(200).json({status: 'OK', timestamp: new Date().toISOString(), uptime: process.uptime()});
+  res.status(200).json({
+    status: 'OK',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+  });
 });
 
 app.get('/', (req, res) => {
@@ -29,6 +33,6 @@ app.get('/api', (req, res) => {
   res.status(200).send('API is running');
 });
 
-app.use('/api/auth', authRoutes);                       // api/auth/* goes to authRoutes
+app.use('/api/auth', authRoutes); // api/auth/* goes to authRoutes
 
 export default app;
