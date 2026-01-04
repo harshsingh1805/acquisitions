@@ -1,11 +1,9 @@
 import express from 'express';
+import { Singup } from '#controllers/auth.controller.js';
 
 const router = express.Router();
 
-router.post('/sign-up', (req, res) => {
-  // Handle user sign-up
-  res.send('Sign-up endpoint');
-});
+router.post('/sign-up', Singup);
 
 router.post('/sign-in', (req, res) => {
   // Handle user sign-in
